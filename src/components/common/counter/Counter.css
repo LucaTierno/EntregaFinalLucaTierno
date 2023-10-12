@@ -1,0 +1,20 @@
+.container-botones-cantidad {
+    margin-top: 20px;
+}
+
+.container-botones-cantidad h5 {
+    margin-left: 15px;
+}
+
+.boton-sumar {
+    margin-left: 15px;
+}
+
+.boton-sumar, .boton-restar {
+    border: none;
+    background-color: rgb(212, 212, 212);
+    padding: 5px 5px;
+    border-radius: 25px;
+    font-size: small;
+    box-shadow: 0 0 5px rgb(143, 143, 143);
+}

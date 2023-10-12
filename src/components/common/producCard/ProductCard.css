@@ -1,0 +1,45 @@
+.card-productos {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.card-container-img {
+    border: 1px solid rgb(226, 226, 226);
+    padding: 20px;
+}
+
+.card-container-img img {
+    width: 90%;
+    padding: 10px;
+}
+
+.card-redireccion {
+    text-decoration: none;
+}
+
+.card-titulo {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 7px auto;
+    width: 250px;
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+}
+
+.card-categoria {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.card-precio {
+    font-size: 0.8rem;
+    font-weight: 700;
+}

@@ -1,0 +1,25 @@
+.container-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 2rem;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 100px;
+}
+
+@media (max-width: 1200px) {
+    .container-productos{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .container-productos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .container-productos{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

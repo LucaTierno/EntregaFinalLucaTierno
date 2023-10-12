@@ -1,0 +1,171 @@
+.detalles-producto {
+  padding-top: 120px;
+  padding-bottom: 100px;
+  background-color: rgb(247, 247, 247);
+}
+
+.container-experimenta {
+  width: 100%;
+  background-color: rgb(243, 243, 243);
+  padding: 1.5rem;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.container-experimenta h2 {
+  color: rgb(34, 34, 34);
+  font-weight: 700;
+}
+
+.container-experimenta span {
+  color: rgb(197, 128, 0);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.container-experimenta p {
+  margin: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(108%);
+}
+
+.container-carousel {
+  background-color: rgb(255, 255, 255);
+  padding: 25px;
+  border-top-left-radius: 10px;
+}
+
+.container-carousel img {
+  width: 550px;
+  height: 550px;
+}
+
+.img-carousel {
+  margin-left: 12%;
+}
+
+.container-detalles-texto {
+  background-color: rgb(243, 243, 243);
+  padding: 20px;
+  border-top-right-radius: 10px;
+}
+
+.linea-estilo {
+  display: flex;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(207, 207, 207);
+  margin: 10px 0;
+}
+
+.contorno-estilo {
+    font-weight: 500;
+}
+
+.nombre-guitarra {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.detalles-subtitulo-guitarra {
+  font-size: 1.1rem;
+}
+
+.detalles-guitarra {
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+.precio-guitarra {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.boton-añadir-carrito {
+    border: none;
+    background-color: rgb(197, 128, 0);
+    padding: 5px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+}
+
+.boton-añadir-carrito:hover {
+    background-color: rgb(173, 113, 0);
+}
+
+@media (max-width: 1399px) {
+  .img-carousel {
+    margin-left: 6%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .container-carousel img {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 991px) {
+  .img-carousel {
+    margin-left: 5%;
+  }
+
+  .container-carousel img {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container-experimenta {
+    padding: 0;
+    padding-top: 15px;
+  }
+
+  .img-carousel {
+    margin-left: 13%;
+  }
+
+  .container-carousel img {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 500px) {
+  .img-carousel {
+    margin-left: 13%;
+  }
+
+  .container-carousel img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .img-carousel {
+    margin-left: 18%;
+  }
+
+  .container-carousel img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 390px) {
+  .img-carousel {
+    margin-left: 13%;
+  }
+
+  .container-carousel img {
+    width: 250px;
+    height: 250px;
+  }
+}

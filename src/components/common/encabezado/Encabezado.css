@@ -1,0 +1,58 @@
+.encabezado {
+    padding-top: 70px;
+}
+
+.container-banner {
+    background-image: url(../../../../public/img/banner-grande.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 1300px;
+    min-height: 45vh;
+    margin: auto;
+    position: relative;
+}
+
+.container-texto {
+    max-width: 350px;
+    position: absolute;
+    top: 24%;
+    right: 2%;
+    color: whitesmoke;
+}
+
+.container-texto p{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 991px) {
+
+    .encabezado {
+        background-color: rgb(255, 255, 255);
+        padding-top: 50px;
+    }
+    
+    .container-banner {
+        background-image: url(../../../../public/img/banner-chico.png);
+        background-color: rgb(50, 50, 50);
+        background-blend-mode: soft-light;
+        margin: auto;
+        position: relative;
+        display: flex;
+        padding-bottom: 20px;
+    }
+
+    .container-texto {
+        position: relative;
+        text-align: center;
+        margin: auto;
+        margin-top: 180px;
+    }
+
+    .container-texto p{
+        padding: 0 20px;
+        width: 300px;
+        margin: auto;
+    }
+}
