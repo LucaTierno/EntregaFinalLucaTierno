@@ -14,6 +14,7 @@ export const ItemListContainer = () => {
     const productosFiltrados = productos.filter( product => product.category === categoryName)
     const tarea = new Promise((resolve, reject) => {
       resolve( categoryName ? productosFiltrados : productos), reject("Ups! Algo salio mal");
+    // window.scrollTo(0, 0)
     });
 
     tarea.then((res) => setItems(res)).catch((error) => console.log(error));

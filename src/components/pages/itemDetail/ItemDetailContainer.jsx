@@ -11,6 +11,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const getProducts = new Promise((resolve, reject) => {
       resolve(productos), reject("Ups! Algo salio mal");
+      // window.scrollTo(0, 0)
     });
 
     getProducts.then((res) => {

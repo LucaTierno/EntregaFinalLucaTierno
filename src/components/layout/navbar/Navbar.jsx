@@ -19,11 +19,11 @@ function MyNavbar() {
         }}
       >
         <Container>
-          <Navbar.Brand href="#" className="fw-medium">
-            <Link to="/" style={{ textDecoration: "none", color: "#333" }}>
+          <Link to="/" style={{ textDecoration: "none", color: "#333" }}>
+            <Navbar.Brand href="#" className="fw-medium">
               Star Gibson
-            </Link>
-          </Navbar.Brand>
+            </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -39,7 +39,13 @@ function MyNavbar() {
                 </Link>
               </Nav.Link>
               <Nav.Link href="#">
-                <Link to="/aboutUs" style={{ textDecoration: "none", color: "#333"}}> Nosotros</Link>
+                <Link
+                  to="/aboutUs"
+                  style={{ textDecoration: "none", color: "#333" }}
+                >
+                  {" "}
+                  Nosotros
+                </Link>
               </Nav.Link>
               <NavDropdown title="Guitarras" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.4">
