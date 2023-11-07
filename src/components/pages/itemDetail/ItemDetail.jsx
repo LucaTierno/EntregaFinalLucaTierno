@@ -1,8 +1,9 @@
 import Carousel from "react-bootstrap/Carousel";
 import "./ItemDetail.css";
 import CounterContainer from "../../common/counter/CounterContainer";
+import { Link } from "react-router-dom";
 
-const ItemDetail = ({ productSelected, onAdd }) => {
+const ItemDetail = ({ productSelected, onAdd, initial, showCounter }) => {
   return (
     <section className="detalles-producto">
       <div className="container">
@@ -83,19 +84,31 @@ const ItemDetail = ({ productSelected, onAdd }) => {
             <p className="precio-guitarra">${productSelected.price}</p>
             <span className="linea-estilo"></span>
             <p>
-              <span className="contorno-estilo">Descripcion:</span> {productSelected.description}
+              <span className="contorno-estilo">Descripcion:</span>{" "}
+              {productSelected.description}
             </p>
-            <CounterContainer stock={productSelected.stock} onAdd={onAdd} />
+
+            {showCounter ? (
+              <CounterContainer
+                stock={productSelected.stock}
+                onAdd={onAdd}
+                initial={initial}
+              />
+            ) : (
+              <Link to="/cart">
+                <button className="boton-añadir-carrito">Terminar compra</button>
+              </Link>
+            )}
           </div>
         </div>
         <div className="container-experimenta">
           <h2>¡Eleva tu sonido con excelencia!</h2>
           <p>
             <span>Experimenta la leyenda</span> viva de la música con la Gibson
-            <span> {productSelected.category}</span>.
-            Desde el rock al blues y más allá, la {productSelected.category} ofrece un tono
-            inigualable y un estilo clásico. Descubre por qué las leyendas de la
-            música eligen la Gibson {productSelected.category}.
+            <span> {productSelected.category}</span>. Desde el rock al blues y
+            más allá, la {productSelected.category} ofrece un tono inigualable y
+            un estilo clásico. Descubre por qué las leyendas de la música eligen
+            la Gibson {productSelected.category}.
           </p>
         </div>
       </div>

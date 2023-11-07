@@ -1,34 +1,65 @@
-import { useEffect, useState } from "react";
-import { productos } from "../../../data/productos";
+import { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
+import Swal from "sweetalert2";
+import { db } from "../../../firebaseConfig";
+import { getDoc, collection, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [productSelected, setProductSelected] = useState({});
+  const [showCounter, setShowCounter] = useState(true);
 
-  const { id } = useParams()
+  const { id } = useParams();
+  const { addToCart, getQuantityById } = useContext(CartContext);
+
+  let totalQuantity = getQuantityById(id);
+  console.log(totalQuantity);
 
   useEffect(() => {
-    const getProducts = new Promise((resolve, reject) => {
-      resolve(productos), reject("Ups! Algo salio mal");
-      // window.scrollTo(0, 0)
-    });
-
-    getProducts.then((res) => {
-      let producto = res.find((elemento) => elemento.id === +id);
-      setProductSelected(producto);
+    let itemCollection = collection(db, "productos");
+    let refDoc = doc(itemCollection, id);
+    getDoc(refDoc).then((res) => {
+      setProductSelected({ id: res.id, ...res.data() });
     });
   }, [id]);
 
   const onAdd = (cantidad) => {
-    let productoConCantidad = {
+    let item = {
       ...productSelected,
       quantity: cantidad,
     };
-    console.log("Este es el productos que se agrega", productoConCantidad);
+
+    addToCart(item);
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top",
+      showConfirmButton: false,
+      timer: 1200,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+
+    Toast.fire({
+      icon: "success",
+      title: "Producto agregado al carrito",
+    });
+
+    setShowCounter(false);
   };
 
-  return <ItemDetail productSelected={productSelected} onAdd={onAdd} />;
+  return (
+    <ItemDetail
+      productSelected={productSelected}
+      onAdd={onAdd}
+      initial={totalQuantity}
+      showCounter={showCounter}
+    />
+  );
 };
 
 export default ItemDetailContainer;

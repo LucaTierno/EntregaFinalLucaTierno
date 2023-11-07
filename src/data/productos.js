@@ -1,26 +1,7 @@
 export let productos = [
     {
-        id: 1,
-        title: "Les Paul Classic - Honeyburst",
-        price: "2,799.00",
-        stock: 5,
-        description: "La Gibson Les Paul es una guitarra eléctrica icónica conocida por su cuerpo sólido de caoba, pastillas humbucker que ofrecen un tono potente, y un diseño clásico con acabados atractivos. Es apreciada por su versatilidad tonal y se ha convertido en una elección emblemática para músicos de diversos géneros.",
-        category: "Les Paul",
-        color: "Clasico",
-        lateralidad: "Derecha",
-        imgPrincipal: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1695743671/gybson/lesPaul/Les_Paul_Classic_-_Honeyburst_uyuunr.png",
-        imgDetalles1: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696520445/gybson/lesPaul/Les_Paul_Classic_-_Honeyburst-Detalles-1_mar2f1.png",
-        imgDetalles2: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696520447/gybson/lesPaul/Les_Paul_Classic_-_Honeyburst-Detalles-2_bvj4f1.png",
-        imgDetalles3: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696520455/gybson/lesPaul/Les_Paul_Classic_-_Honeyburst-Detalles-3_oph2av.png",
-        imgDetalles4: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696520453/gybson/lesPaul/Les_Paul_Classic_-_Honeyburst-Detalles-4_esjmiz.png",
-        imgDetalles5: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696520450/gybson/lesPaul/Les_Paul_Classic_-_Honeyburst-Detalles-5_ty8tkg.png",
-        imgDetalles6: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696520454/gybson/lesPaul/Les_Paul_Classic_-_Honeyburst-Detalles-6_ozczxy.png",
-        imgDetalles7: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696520447/gybson/lesPaul/Les_Paul_Classic_-_Honeyburst-Detalles-7_gswfrs.png"
-    },
-    {
-        id: 2,
         title: "Les Paul Standard 50s Figured Top - Translucent Fuchsia",
-        price: "2,799.00",
+        price: 2799.00,
         stock: 5,
         description: "La Gibson Les Paul es una guitarra eléctrica icónica conocida por su cuerpo sólido de caoba, pastillas humbucker que ofrecen un tono potente, y un diseño clásico con acabados atractivos. Es apreciada por su versatilidad tonal y se ha convertido en una elección emblemática para músicos de diversos géneros.",
         category: "Les Paul",
@@ -36,27 +17,8 @@ export let productos = [
         imgDetalles7: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696437902/gybson/lesPaul/Standard_50s_Figured_Top_-_Translucent_Fuchsia-Detalles-7_uysvfz.png"
     },
     {
-        id: 3,
-        title: "Kirk Douglas Signature SG - Inverness Green",
-        price: "3,299.00",
-        stock: 5,
-        description: "La Gibson SG es una guitarra eléctrica icónica con un diseño de cuerpo sólido, lo que la hace ligera y fácil de tocar. Con pastillas humbucker de alta potencia, ofrece un tono versátil perfecto para el rock y otros géneros. Su cuerpo delgado y doble cutaway permite un acceso cómodo a los trastes superiores, y su mástil delgado la hace ideal para guitarristas que prefieren una jugabilidad rápida. La SG es conocida por su aspecto elegante y su legado en el rock 'n' roll.",
-        category: "SG",
-        color: "Verde agua",
-        lateralidad: "Derecha",
-        imgPrincipal: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1695743714/gybson/SG/Kirk_Douglas_Signature_SG_-_Inverness_Green_hkiudp.png",
-        imgDetalles1: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696522022/gybson/lesPaul/Kirk_Douglas_Signature_SG_-_Inverness_Green-Detalles-2_rppbbf.png",
-        imgDetalles2: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696522020/gybson/lesPaul/Kirk_Douglas_Signature_SG_-_Inverness_Green-Detalles-4_xi96og.png",
-        imgDetalles3: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696522021/gybson/lesPaul/Kirk_Douglas_Signature_SG_-_Inverness_Green-Detalles-6_mjr40s.png",
-        imgDetalles4: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696522020/gybson/lesPaul/Kirk_Douglas_Signature_SG_-_Inverness_Green-Detalles-5_mscd1n.png",
-        imgDetalles5: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696522022/gybson/lesPaul/Kirk_Douglas_Signature_SG_-_Inverness_Green-Detalles-2_rppbbf.png",
-        imgDetalles6: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696522020/gybson/lesPaul/Kirk_Douglas_Signature_SG_-_Inverness_Green-Detalles-4_xi96og.png",
-        imgDetalles7: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696522021/gybson/lesPaul/Kirk_Douglas_Signature_SG_-_Inverness_Green-Detalles-6_mjr40s.png"
-    },
-    {
-        id: 4,
         title: "Jimi Hendrix 1967 SG Custom - Aged Polaris White",
-        price: "9,999.00",
+        price: 9999.00,
         stock: 5,
         description: "La Gibson SG es una guitarra eléctrica icónica con un diseño de cuerpo sólido, lo que la hace ligera y fácil de tocar. Con pastillas humbucker de alta potencia, ofrece un tono versátil perfecto para el rock y otros géneros. Su cuerpo delgado y doble cutaway permite un acceso cómodo a los trastes superiores, y su mástil delgado la hace ideal para guitarristas que prefieren una jugabilidad rápida. La SG es conocida por su aspecto elegante y su legado en el rock 'n' roll.",
         category: "SG",
@@ -72,9 +34,8 @@ export let productos = [
         imgDetalles7: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696524553/gybson/lesPaul/Jimi_Hendrix_1967_SG_Custom_-_Aged_Polaris_White-Detalles-3_ddwyzq.png"
     },
     {
-        id: 5,
         title: "ES 339 - Cherry",
-        price: "4,599.00",
+        price: 4599.00,
         stock: 5,
         description: "La Gibson ES-335 es una guitarra eléctrica semi-hollow que combina la calidez de una acústica con la potencia de una eléctrica. Con un cuerpo semi-hueco de arce y caoba, pastillas humbucker y un diseño clásico, ofrece un tono versátil ideal para blues, jazz y rock. Con un mástil de caoba y diapasón de palisandro, es cómoda de tocar y apreciada por su sonido clásico y elegante.",
         category: "ES",
@@ -90,9 +51,8 @@ export let productos = [
         imgDetalles7: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696525533/gybson/lesPaul/ES-339_-_Cherry-Detalles-3_bmy6ct.png"
     },
     {
-        id: 6,
         title: "Chuck Berry 1955 ES-350T - Antique Natural",
-        price: "9,999.00",
+        price: 9999.00,
         stock: 5,
         description: "La Gibson ES-335 es una guitarra eléctrica semi-hollow que combina la calidez de una acústica con la potencia de una eléctrica. Con un cuerpo semi-hueco de arce y caoba, pastillas humbucker y un diseño clásico, ofrece un tono versátil ideal para blues, jazz y rock. Con un mástil de caoba y diapasón de palisandro, es cómoda de tocar y apreciada por su sonido clásico y elegante.",
         category: "ES",
@@ -108,9 +68,8 @@ export let productos = [
         imgDetalles7: "https://res.cloudinary.com/djdcj4v1j/image/upload/v1696527790/gybson/lesPaul/Chuck_Berry_1955_ES-350T_-_Antique_Natural-Detalles-2_djwuej.png"
     },
     {
-        id: 7,
         title: "Les Paul Standard 60s Figured Top - Blueberry Burst",
-        price: "3,499.00",
+        price: 3499.00,
         stock: 5,
         description: "La Gibson Les Paul es una guitarra eléctrica icónica conocida por su cuerpo sólido de caoba, pastillas humbucker que ofrecen un tono potente, y un diseño clásico con acabados atractivos. Es apreciada por su versatilidad tonal y se ha convertido en una elección emblemática para músicos de diversos géneros.",
         category: "Les Paul",
