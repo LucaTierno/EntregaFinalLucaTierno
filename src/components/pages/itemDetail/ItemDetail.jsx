@@ -77,17 +77,23 @@ const ItemDetail = ({ productSelected, onAdd, initial, showCounter }) => {
               <span className="contorno-estilo">Lateralidad:</span>{" "}
               {productSelected.lateralidad}
             </p>
-            <p className="detalles-guitarra">
-              <span className="contorno-estilo">Stock:</span>{" "}
-              {productSelected.stock}
-            </p>
+
+            {productSelected.stock > 0 ? (
+              <p className="detalles-guitarra">
+                <span className="contorno-estilo">Stock:</span>{" "}
+                {productSelected.stock}
+              </p>
+            ) : (
+              <p className="detalles-guitarra">
+                <span className="contorno-estilo sin-stock">SIN STOCK</span>
+              </p>
+            )}
             <p className="precio-guitarra">${productSelected.price}</p>
             <span className="linea-estilo"></span>
             <p>
               <span className="contorno-estilo">Descripcion:</span>{" "}
               {productSelected.description}
             </p>
-
             {showCounter ? (
               <CounterContainer
                 stock={productSelected.stock}
@@ -96,7 +102,9 @@ const ItemDetail = ({ productSelected, onAdd, initial, showCounter }) => {
               />
             ) : (
               <Link to="/cart">
-                <button className="boton-añadir-carrito">Terminar compra</button>
+                <button className="boton-añadir-carrito">
+                  Terminar compra
+                </button>
               </Link>
             )}
           </div>

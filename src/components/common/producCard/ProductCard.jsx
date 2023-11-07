@@ -17,7 +17,7 @@ const ProductCard = ({ item }) => {
         </div>
       ) : (
         <div className="card-productos" key={item.id}>
-          <Link className="card-redireccion">
+          <Link to={`/itemDetail/${item.id}`} className="card-redireccion">
             <div className="card-container-img">
               <img src={item.imgPrincipal} alt="" />
             </div>

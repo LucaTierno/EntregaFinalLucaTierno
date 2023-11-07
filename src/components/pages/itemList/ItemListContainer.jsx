@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ItemList } from "./ItemList";
 import { Encabezado } from "../../common/encabezado/Encabezado";
 import { useParams } from "react-router-dom";
-import { getDocs, collection, query, where, addDoc } from "firebase/firestore";
+import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
 import { productos } from "../../../data/productos";
 
