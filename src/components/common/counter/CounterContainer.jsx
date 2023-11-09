@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Counter from "./Counter";
+import Swal from "sweetalert2";
 
 
 const CounterContainer = ({ stock, onAdd, initial=1 }) => {
@@ -9,7 +10,11 @@ const CounterContainer = ({ stock, onAdd, initial=1 }) => {
         if (contador < stock) {
             setContador(contador + 1);
         } else {
-            alert("Cantidad Máxima de Productos");
+            Swal.fire({
+                title: "¡Cantidad máxima de unidades!",
+                text: "No tenemos más cantidades de este producto",
+                icon: "info"
+              });
         }
     }
 

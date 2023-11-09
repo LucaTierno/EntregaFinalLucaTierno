@@ -63,8 +63,6 @@ const CartContextComponent = ({ children }) => {
     return total
   }
 
-   
-
   let data = { cart, addToCart, getQuantityById, clearCart, deleteProductById, getTotalPrice, getTotalQuantity };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;

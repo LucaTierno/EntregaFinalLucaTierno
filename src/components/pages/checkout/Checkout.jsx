@@ -11,6 +11,7 @@ import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 import Swal from "sweetalert2";
 
 const Checkout = () => {
+  window.scrollTo(0, 0);
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
 
   const total = getTotalPrice();

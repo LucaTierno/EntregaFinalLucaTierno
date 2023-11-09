@@ -7,8 +7,9 @@ import { db } from "../../../firebaseConfig";
 import { productos } from "../../../data/productos";
 
 export const ItemListContainer = () => {
-  const [items, setItems] = useState([]);
+  window.scrollTo(0, 0);
 
+  const [items, setItems] = useState([]);
   const { categoryName } = useParams();
 
   useEffect(() => {
@@ -30,14 +31,14 @@ export const ItemListContainer = () => {
       });
       setItems(newArray);
     });
-    
+
     window.scrollTo(0, 0);
   }, [categoryName]);
 
   // const rellenarDB = ()=> {
-    
+
   //   const prodCollection = collection(db, "productos")
-    
+
   //   productos.forEach((elemento)=> {
   //     addDoc(prodCollection, elemento)
   //   })

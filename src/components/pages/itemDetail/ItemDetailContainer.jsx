@@ -7,6 +7,8 @@ import { db } from "../../../firebaseConfig";
 import { getDoc, collection, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
+  window.scrollTo(0, 0);
+  
   const [productSelected, setProductSelected] = useState({});
   const [showCounter, setShowCounter] = useState(true);
 
