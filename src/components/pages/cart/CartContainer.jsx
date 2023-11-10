@@ -69,7 +69,20 @@ const CartContainer = () => {
   return (
     <section className="section-cart">
       <div className="container container-cart">
-        <h1 className="text-center mb-4">Tu Carrito</h1>
+        <div className="container-checkout-pasos-compra">
+          <div className="checkout-circulo activate">
+            <p>1</p>
+          </div>
+          <span className="checkout-linea-pasos"></span>
+          <div className="checkout-circulo">
+            <p>2</p>
+          </div>
+          <span className="checkout-linea-pasos"></span>
+          <div className="checkout-circulo">
+            <p>3</p>
+          </div>
+        </div>
+        <h1 className="tittle-carrito">Tu Carrito</h1>
         <div className="container-text-resumen-compra">
           <h5 className="text-resumen-compra">Resumen de la compra:</h5>
         </div>

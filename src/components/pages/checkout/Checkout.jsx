@@ -8,9 +8,9 @@ import { db } from "../../../firebaseConfig";
 import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 import Swal from "sweetalert2";
 import "./Checkout.css";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
-  window.scrollTo(0, 0);
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
 
   const total = getTotalPrice();
@@ -77,17 +77,50 @@ const Checkout = () => {
   return (
     <section className="section-checkout">
       {orderId ? (
-        <h2
-          style={{
-            height: "500px",
-            backgroundColor: "red",
-            padding: "200px 0",
-          }}
-        >
-          Gracias por su compra! Su código de seguimiento es: {orderId}
-        </h2>
+        <div className="container container-compra-realizada">
+          <div className="container-checkout-pasos-compra">
+            <div className="checkout-circulo activate">
+              <p>1</p>
+            </div>
+            <span className="checkout-linea-pasos activate"></span>
+            <div className="checkout-circulo activate">
+              <p>2</p>
+            </div>
+            <span className="checkout-linea-pasos activate"></span>
+            <div className="checkout-circulo activate">
+              <p>3</p>
+            </div>
+          </div>
+          <div className="container-texto-compra-realizada">
+            <h1>Compra realizada con éxito!</h1>
+            <p>
+              Su código de orden es: <span>{orderId}</span>.
+            </p>
+            <p>Le enviaremos un Email con todos los detalles de la compra.</p>
+            <p className="mb-5">
+              Muchas gracias por comprar en{" "}
+              <span className="fs-4">Star Gibson</span>.
+            </p>
+            <Link to={"/"}>
+              <button className="boton-finalizar">Volver al inicio</button>
+            </Link>
+          </div>
+        </div>
       ) : (
         <div className="container-form container">
+          <div className="container-checkout-pasos-compra">
+            <div className="checkout-circulo activate">
+              <p>1</p>
+            </div>
+            <span className="checkout-linea-pasos activate"></span>
+            <div className="checkout-circulo activate">
+              <p>2</p>
+            </div>
+            <span className="checkout-linea-pasos"></span>
+            <div className="checkout-circulo">
+              <p>3</p>
+            </div>
+          </div>
           <h1 className="title-form-comprar">Tus Datos</h1>
           <span className="linea-estilo-form "></span>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>

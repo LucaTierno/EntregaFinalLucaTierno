@@ -4,8 +4,26 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "../../common/cartWidget/CartWidget";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function MyNavbar() {
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      const navbar = document.getElementById("basic-navbar-nav");
+      const btnHamburguesa = document.getElementById("btnHamburguesa");
+      if (
+        navbar &&
+        !navbar.contains(event.target) &&
+        event.target !== btnHamburguesa
+      ) {
+        navbar.classList.remove("show");
+      }
+    };
+    document.body.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.body.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
   return (
     <>
       <Navbar

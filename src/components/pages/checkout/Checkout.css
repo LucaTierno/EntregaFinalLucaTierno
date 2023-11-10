@@ -1,10 +1,10 @@
 .section-checkout {
-    background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   min-height: 90vh;
 }
 
 .container-form {
-  padding: 100px;
+  padding: 120px;
   margin: auto;
   background-color: rgb(247, 247, 247);
   min-height: 90vh;
@@ -12,12 +12,12 @@
 }
 
 .title-form-comprar {
-    text-align: center;
-    margin: 50px;
+  text-align: center;
+  margin: 30px 0 50px;
 }
 
 .group-input-responsive {
-    margin: 15px 0;
+  margin: 15px 0;
 }
 
 .position-relative {
@@ -42,19 +42,72 @@
 }
 
 .linea-estilo-form {
-    display: flex;
-    width: 100%;
-    height: 1px;
-    background-color: rgb(226, 226, 226);
-    margin: 10px 0;
-  }
+  display: flex;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(226, 226, 226);
+  margin: 10px 0;
+}
 
-/* @media (max-width: 575px) {
-  .group-input-responsive {
-    width: 100%
-  }
+.container-checkout-pasos-compra {
+  max-width: 500px;
+  display: flex;
+  margin: auto;
+}
 
-  .input-responsive {
-    max-width: 300px;
-  }
-} */
+.checkout-circulo {
+  background-color: rgb(158, 158, 158);
+  height: 50px;
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgb(105, 105, 105);
+}
+
+.checkout-circulo p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 5px;
+  padding: 0;
+  color: #fff;
+}
+
+.checkout-linea-pasos {
+  height: 3px;
+  width: 100%;
+  background-color: rgb(158, 158, 158);
+  margin: auto;
+  box-shadow: 0 0 10px rgb(122, 122, 122);
+}
+
+.activate {
+  background-color: rgb(0, 151, 0);
+}
+
+.container-compra-realizada {
+  background-color: antiquewhite;
+  padding-top: 120px;
+  margin: auto;
+  background-color: rgb(247, 247, 247);
+  min-height: 90vh;
+  box-shadow: 0 0 10px rgb(221, 221, 221);
+}
+
+.container-texto-compra-realizada {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.container-texto-compra-realizada h1 {
+  margin: 30px 0 50px;
+}
+
+.container-texto-compra-realizada p {
+  margin: 8px 0;
+  padding: 0;
+}
+
+.container-texto-compra-realizada span {
+  font-weight: 700;
+}
