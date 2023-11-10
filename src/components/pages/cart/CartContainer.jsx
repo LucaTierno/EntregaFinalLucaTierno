@@ -112,7 +112,7 @@ const CartContainer = () => {
             </Link>
             <p className="total">
               Total de la compra: ${total}
-              <span className="linea-estilo"></span>
+              <span className="linea-estilo-cart"></span>
             </p>
             <Link to={"/checkout"}>
               <button className="boton-finalizar">Finalizar compra</button>

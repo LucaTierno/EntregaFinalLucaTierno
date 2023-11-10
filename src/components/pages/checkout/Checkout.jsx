@@ -1,14 +1,13 @@
 import React, { useContext, useState } from "react";
-import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 import { CartContext } from "../../../context/CartContext";
 import { serverTimestamp } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
 import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 import Swal from "sweetalert2";
+import "./Checkout.css";
 
 const Checkout = () => {
   window.scrollTo(0, 0);
@@ -42,34 +41,41 @@ const Checkout = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      event.preventDefault();
+      event.stopPropagation();
 
-    let order = {
-      buyer: userData,
-      items: cart,
-      total,
-      date: serverTimestamp(),
-    };
+      let order = {
+        buyer: userData,
+        items: cart,
+        total,
+        date: serverTimestamp(),
+      };
 
-    console.log(order);
+      console.log(order);
 
-    const ordersCollection = collection(db, "orders");
-    addDoc(ordersCollection, order).then((res) => setOrderId(res.id));
+      const ordersCollection = collection(db, "orders");
+      addDoc(ordersCollection, order).then((res) => setOrderId(res.id));
 
-    cart.forEach((elemento) => {
-      updateDoc(doc(db, "productos", elemento.id), {
-        stock: elemento.stock - elemento.quantity,
+      cart.forEach((elemento) => {
+        updateDoc(doc(db, "productos", elemento.id), {
+          stock: elemento.stock - elemento.quantity,
+        });
       });
-    });
+
+      buyIdAlert();
+      clearCart();
+    }
 
     setValidated(true);
-
-    clearCart();
   };
 
   return (
-    <>
+    <section className="section-checkout">
       {orderId ? (
         <h2
           style={{
@@ -81,89 +87,148 @@ const Checkout = () => {
           Gracias por su compra! Su código de seguimiento es: {orderId}
         </h2>
       ) : (
-        <div style={{ padding: "100px 20px", width: "1200px", margin: "auto" }}>
+        <div className="container-form container">
+          <h1 className="title-form-comprar">Tus Datos</h1>
+          <span className="linea-estilo-form "></span>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Row className="mb-3">
-              <Form.Group as={Col} md="4" controlId="validationCustomName">
+              <Form.Group
+                as={Col}
+                md="2"
+                controlId="validationCustomName"
+                className="group-input-responsive"
+              >
                 <Form.Label>Nombre</Form.Label>
                 <Form.Control
                   required
                   type="text"
                   placeholder="Nombre"
-                  defaultValue="Mark"
                   name="name"
                   onChange={handleChange}
+                  className="input-responsive"
+                  pattern=".{3,}"
                 />
                 <Form.Control.Feedback>Perfecto!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Ingrese un dato válido.
+                </Form.Control.Feedback>
               </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationCustoLastname2">
+              <Form.Group
+                as={Col}
+                md="2"
+                controlId="validationCustoLastname2"
+                className="group-input-responsive"
+              >
                 <Form.Label>Apellido</Form.Label>
                 <Form.Control
                   required
                   type="text"
                   placeholder="Apellido"
-                  defaultValue="Otto"
                   name="lastName"
                   onChange={handleChange}
+                  className="input-responsive"
+                  pattern=".{3,}"
                 />
                 <Form.Control.Feedback>Perfecto!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Ingrese un dato válido.
+                </Form.Control.Feedback>
               </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationCustomEmail">
+              <Form.Group
+                as={Col}
+                md="4"
+                controlId="validationCustomEmail"
+                className="group-input-responsive"
+              >
                 <Form.Label>Email</Form.Label>
                 <Form.Control
                   required
-                  type="text"
+                  type="email"
                   placeholder="Email"
-                  defaultValue="markotto@gmail.com"
                   name="email"
                   onChange={handleChange}
+                  className="input-responsive"
+                  pattern=".{@,}"
                 />
                 <Form.Control.Feedback>Perfecto!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Ingrese un dato válido.
+                </Form.Control.Feedback>
               </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationCustomTelefono">
-                <Form.Label>Telefono</Form.Label>
+              <Form.Group
+                as={Col}
+                md="4"
+                controlId="validationCustomTelefono"
+                className="group-input-responsive"
+              >
+                <Form.Label>Teléfono</Form.Label>
                 <Form.Control
                   required
-                  type="text"
+                  type="number"
                   placeholder="Telefono"
-                  defaultValue="02237252392"
                   name="telefono"
                   onChange={handleChange}
+                  className="input-responsive"
+                  pattern=".{3,}"
                 />
                 <Form.Control.Feedback>Perfecto!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Ingrese un dato válido.
+                </Form.Control.Feedback>
               </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationCustomProvincia">
+              <Form.Group
+                as={Col}
+                md="4"
+                controlId="validationCustomProvincia"
+                className="group-input-responsive"
+              >
                 <Form.Label>Provincia</Form.Label>
                 <Form.Control
                   required
                   type="text"
                   placeholder="Provincia"
-                  defaultValue="Buenos Aires"
                   name="provincia"
                   onChange={handleChange}
+                  className="input-responsive"
+                  pattern=".{3,}"
                 />
                 <Form.Control.Feedback>Perfecto!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Ingrese un dato válido.
+                </Form.Control.Feedback>
               </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationCustomCity">
+              <Form.Group
+                as={Col}
+                md="4"
+                controlId="validationCustomCity"
+                className="group-input-responsive"
+              >
                 <Form.Label>Ciudad</Form.Label>
                 <Form.Control
                   required
                   type="text"
                   placeholder="Ciudad"
-                  defaultValue="Mar del Plata"
                   name="city"
                   onChange={handleChange}
+                  className="input-responsive"
+                  pattern=".{3,}"
                 />
                 <Form.Control.Feedback>Perfecto!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Ingrese un dato válido.
+                </Form.Control.Feedback>
+              </Form.Group>
+              <Form.Group as={Col} md="4" className="position-relative">
+                <button type="submit" className="form-boton-comprar">
+                  Finalizar Compra
+                </button>
               </Form.Group>
             </Row>
-            <button onClick={buyIdAlert} type="submit">
-              Finalizar Compra
-            </button>
           </Form>
+          <span className="linea-estilo-form "></span>
         </div>
       )}
-    </>
+    </section>
   );
 };
 
