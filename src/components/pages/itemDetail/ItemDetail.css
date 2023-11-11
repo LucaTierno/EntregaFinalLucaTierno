@@ -36,6 +36,7 @@
   background-color: rgb(255, 255, 255);
   padding: 25px;
   border-top-left-radius: 10px;
+  width: 550px;
 }
 
 .container-carousel img {

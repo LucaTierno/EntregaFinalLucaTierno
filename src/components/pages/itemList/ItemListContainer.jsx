@@ -4,7 +4,6 @@ import { Encabezado } from "../../common/encabezado/Encabezado";
 import { useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
-import { productos } from "../../../data/productos";
 
 export const ItemListContainer = () => {
   window.scrollTo(0, 0);

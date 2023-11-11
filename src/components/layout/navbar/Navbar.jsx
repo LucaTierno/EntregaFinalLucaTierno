@@ -11,6 +11,7 @@ function MyNavbar() {
     const handleOutsideClick = (event) => {
       const navbar = document.getElementById("basic-navbar-nav");
       const btnHamburguesa = document.getElementById("btnHamburguesa");
+
       if (
         navbar &&
         !navbar.contains(event.target) &&
@@ -54,15 +55,6 @@ function MyNavbar() {
                   }}
                 >
                   Inicio
-                </Link>
-              </Nav.Link>
-              <Nav.Link href="#">
-                <Link
-                  to="/aboutUs"
-                  style={{ textDecoration: "none", color: "#333" }}
-                >
-                  {" "}
-                  Nosotros
                 </Link>
               </Nav.Link>
               <NavDropdown title="Guitarras" id="basic-nav-dropdown">

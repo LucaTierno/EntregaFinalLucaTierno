@@ -47,3 +47,10 @@
 .sin-stock {
     color: rgb(212, 0, 0);
 }
+
+@media (max-width: 450px) {
+    .card-productos {
+        width: 200px;
+        margin: auto;
+    }
+  }

@@ -2,8 +2,6 @@ import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import "./Cart.css";
 import Swal from "sweetalert2";
-import DeleteIcon from "@mui/icons-material/Delete";
-import CloseIcon from "@mui/icons-material/Close";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { Link } from "react-router-dom";
 
@@ -109,9 +107,14 @@ const CartContainer = () => {
                   <CancelIcon fontSize="large" />
                 </button>
               </div>
-              <div className="product-cart-img">
-                <img src={product.imgPrincipal} alt="" />
-              </div>
+              <Link
+                to={`/itemDetail/${product.id}`}
+                className="product-cart-img"
+              >
+                <div>
+                  <img src={product.imgPrincipal} alt="" />
+                </div>
+              </Link>
             </div>
           </div>
         ))}
