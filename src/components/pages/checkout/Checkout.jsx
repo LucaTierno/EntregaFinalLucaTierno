@@ -11,6 +11,7 @@ import "./Checkout.css";
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
+  window.scrollTo(0, 0);
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
 
   const total = getTotalPrice();

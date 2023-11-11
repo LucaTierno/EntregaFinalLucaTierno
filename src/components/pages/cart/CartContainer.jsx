@@ -66,76 +66,89 @@ const CartContainer = () => {
 
   return (
     <section className="section-cart">
-      <div className="container container-cart">
-        <div className="container-checkout-pasos-compra">
-          <div className="checkout-circulo activate">
-            <p>1</p>
-          </div>
-          <span className="checkout-linea-pasos"></span>
-          <div className="checkout-circulo">
-            <p>2</p>
-          </div>
-          <span className="checkout-linea-pasos"></span>
-          <div className="checkout-circulo">
-            <p>3</p>
-          </div>
+      {cart.length === 0 ? (
+        <div className="container-cart">
+          <h1 className="tittle-carrito">Ups!</h1>
+          <p className="text-center fw-bold">No hay productos en el carrito!</p>
+          <span className="linea-estilo-cart"></span>
+          
         </div>
-        <h1 className="tittle-carrito">Tu Carrito</h1>
-        <div className="container-text-resumen-compra">
-          <h5 className="text-resumen-compra">Resumen de la compra:</h5>
-        </div>
-        {cart.map((product) => (
-          <div>
-            <span className="linea-estilo-cart"></span>
-            <div key={product.id} className="container-product-cart">
-              <div className="product-cart-info">
-                <h3 className="producto-title fs-5 fw-bold">{product.title}</h3>
-                <h6 className="detalles-titulo">Detalles del producto:</h6>
-                <p className="detalles-texto">Categoria: {product.category}</p>
-                <p className="detalles-texto">Color: {product.color}</p>
-                <p className="detalles-texto">
-                  Lateralidad: {product.lateralidad}
-                </p>
-                <p className="detalles-texto">Cantidad: {product.quantity}</p>
-                <p className="cart-precio-detalles">
-                  <span className="fs-6">Total:</span> ${product.price}
-                </p>
-                <button
-                  className="button-eliminar-producto"
-                  onClick={() => clearProductWithAlert(product.id)}
-                >
-                  <CancelIcon fontSize="large" />
-                </button>
-              </div>
-              <Link
-                to={`/itemDetail/${product.id}`}
-                className="product-cart-img"
-              >
-                <div>
-                  <img src={product.imgPrincipal} alt="" />
-                </div>
-              </Link>
+      ) : (
+        <div className="container container-cart">
+          <div className="container-checkout-pasos-compra">
+            <div className="checkout-circulo activate">
+              <p>1</p>
+            </div>
+            <span className="checkout-linea-pasos"></span>
+            <div className="checkout-circulo">
+              <p>2</p>
+            </div>
+            <span className="checkout-linea-pasos"></span>
+            <div className="checkout-circulo">
+              <p>3</p>
             </div>
           </div>
-        ))}
-        <span className="linea-estilo-cart"></span>
-        {cart.length > 0 && (
-          <div className="container-opciones-finales">
-            <Link>
-              <button className="boton-vaciar" onClick={clearCartWithAlert}>
-                Vaciar Carrito
-              </button>
-            </Link>
-            <p className="total">
-              Total de la compra: ${total}
-              <span className="linea-estilo-cart"></span>
-            </p>
-            <Link to={"/checkout"}>
-              <button className="boton-finalizar">Finalizar compra</button>
-            </Link>
+          <h1 className="tittle-carrito">Tu Carrito</h1>
+          <div className="container-text-resumen-compra">
+            <h5 className="text-resumen-compra">Resumen de la compra:</h5>
           </div>
-        )}
-      </div>
+          {cart.map((product) => (
+            <div>
+              <span className="linea-estilo-cart"></span>
+              <div key={product.id} className="container-product-cart">
+                <div className="product-cart-info">
+                  <h3 className="producto-title fs-5 fw-bold">
+                    {product.title}
+                  </h3>
+                  <h6 className="detalles-titulo">Detalles del producto:</h6>
+                  <p className="detalles-texto">
+                    Categoria: {product.category}
+                  </p>
+                  <p className="detalles-texto">Color: {product.color}</p>
+                  <p className="detalles-texto">
+                    Lateralidad: {product.lateralidad}
+                  </p>
+                  <p className="detalles-texto">Cantidad: {product.quantity}</p>
+                  <p className="cart-precio-detalles">
+                    <span className="fs-6">Total:</span> ${product.price}
+                  </p>
+                  <button
+                    className="button-eliminar-producto"
+                    onClick={() => clearProductWithAlert(product.id)}
+                  >
+                    <CancelIcon fontSize="large" />
+                  </button>
+                </div>
+                <Link
+                  to={`/itemDetail/${product.id}`}
+                  className="product-cart-img"
+                >
+                  <div>
+                    <img src={product.imgPrincipal} alt="" />
+                  </div>
+                </Link>
+              </div>
+            </div>
+          ))}
+          <span className="linea-estilo-cart"></span>
+          {cart.length > 0 && (
+            <div className="container-opciones-finales">
+              <Link>
+                <button className="boton-vaciar" onClick={clearCartWithAlert}>
+                  Vaciar Carrito
+                </button>
+              </Link>
+              <p className="total">
+                Total de la compra: ${total}
+                <span className="linea-estilo-cart"></span>
+              </p>
+              <Link to={"/checkout"}>
+                <button className="boton-finalizar">Finalizar compra</button>
+              </Link>
+            </div>
+          )}
+        </div>
+      )}
     </section>
   );
 };

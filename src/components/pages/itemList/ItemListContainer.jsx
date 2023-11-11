@@ -34,15 +34,6 @@ export const ItemListContainer = () => {
     window.scrollTo(0, 0);
   }, [categoryName]);
 
-  // const rellenarDB = ()=> {
-
-  //   const prodCollection = collection(db, "productos")
-
-  //   productos.forEach((elemento)=> {
-  //     addDoc(prodCollection, elemento)
-  //   })
-  // }
-
   return (
     <>
       <Encabezado />

@@ -10,7 +10,7 @@ export const Encabezado = () => {
             <p>
               Explora un mundo de guitarras de alta calidad en nuestra tienda
               especializada. Encuentra tu sonido único y déjate inspirar en cada
-              nota que toques. ¡Visítanos hoy
+              nota que toques. ¡Visítanos hoy!
             </p>
           </div>
         </div>
