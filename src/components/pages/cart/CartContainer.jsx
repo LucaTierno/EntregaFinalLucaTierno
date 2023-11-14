@@ -71,7 +71,6 @@ const CartContainer = () => {
           <h1 className="tittle-carrito">Ups!</h1>
           <p className="text-center fw-bold">No hay productos en el carrito!</p>
           <span className="linea-estilo-cart"></span>
-          
         </div>
       ) : (
         <div className="container container-cart">

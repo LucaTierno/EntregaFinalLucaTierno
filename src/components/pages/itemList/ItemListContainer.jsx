@@ -37,7 +37,6 @@ export const ItemListContainer = () => {
   return (
     <>
       <Encabezado />
-      {/* <button onClick={rellenarDB}>Rellenar</button> */}
       {items.length === 0 ? (
         <div class="spinnerContainer">
           <div class="spinner"></div>
